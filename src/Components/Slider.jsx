@@ -1,5 +1,5 @@
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../assets/data";
 import { mobile } from "../Responsive";
@@ -133,14 +133,6 @@ const InfoContainer = styled.div`
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
-  // useEffect(() => {
-  //   setTimeout(()=>{
-  //     setSlideIndex(slideIndex+1)
-  //     if(slideIndex === 2){
-  //       setSlideIndex(0)
-  //     }
-  //   },5000)
-  // }, [slideIndex])
 
   const handleClick = (direction) => {
     if (direction === "left") {
