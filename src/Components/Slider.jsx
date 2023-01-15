@@ -2,7 +2,7 @@ import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../assets/data";
-import { mobile } from "../Responsive";
+import { mobile, tablet } from "../Responsive";
 
 const Arrow = styled.div`
   width: 50px;
@@ -36,6 +36,9 @@ const Container = styled.div`
   ${mobile({
     height: "35vh",
   })}
+  ${tablet({
+    height: "35vh",
+  })}
 `;
 
 const Wrapper = styled.div`
@@ -54,6 +57,11 @@ const Slide = styled.div`
     height: "35vh",
     padding: "20px 30px 20px 30px",
   })}
+  ${tablet({
+    height: "35vh",
+    padding: "20px 30px 20px 30px",
+  })}
+
   .slider_container {
     width: 100%;
     height: 100%;
@@ -82,6 +90,9 @@ const Left = styled.div`
   ${mobile({
     display: "none",
   })}
+  ${tablet({
+    display: "none",
+  })}
 `;
 const Right = styled.div`
   flex: 2;
@@ -99,6 +110,9 @@ const Right = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   ${mobile({
+    borderRadius: "10px",
+  })};
+  ${tablet({
     borderRadius: "10px",
   })}
 `;

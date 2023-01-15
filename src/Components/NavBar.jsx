@@ -1,7 +1,7 @@
 import { Monitor, Search, TheaterComedy, Translate } from "@mui/icons-material";
 import styled from "styled-components";
-import { mobile } from "../Responsive";
-import MobileNavBar from "./MobileNavBar";
+import { mobile, tablet } from "../Responsive";
+import MobileSideBar from "./MobileSideBar";
 import "./NavBar.css";
 
 const Container = styled.div`
@@ -15,6 +15,10 @@ const Container = styled.div`
   ${mobile({
     width: "100%",
     height: "60px",
+  })}
+  ${tablet({
+    width: "100%",
+    height: "80px",
   })}
 `;
 const Wrapper = styled.div`
@@ -36,6 +40,9 @@ const Left = styled.div`
   ${mobile({
     marginLeft: "0rem",
   })}
+  ${tablet({
+    marginLeft: "0rem",
+  })}
 `;
 
 const Right = styled.div`
@@ -49,6 +56,9 @@ const Right = styled.div`
   ${mobile({
     marginRight: "0rem",
   })}
+  ${tablet({
+    marginRight: "0rem",
+  })}
 `;
 const MenuItems = styled.ul`
   height: 100%;
@@ -59,6 +69,9 @@ const MenuItems = styled.ul`
   position: relative;
   gap: 1.6rem;
   ${mobile({
+    width: "100%",
+  })}
+  ${tablet({
     width: "100%",
   })}
 `;
@@ -201,7 +214,7 @@ const NavBar = () => {
               </List>
             </MenuItems>
           </Right>
-          <MobileNavBar />
+          <MobileSideBar />
         </Wrapper>
       </Container>
     </>

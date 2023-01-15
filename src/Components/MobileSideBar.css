@@ -1,0 +1,411 @@
+.mobile_nav {
+    display: none;
+}
+
+
+@media screen and (max-width:425px) {
+    .mobile_nav {
+        display: block;
+
+    }
+
+    .nav {
+        display: block;
+    }
+
+    .a1 {
+        text-decoration: none;
+        color: white;
+        font-family: "Raleway";
+        opacity: 1;
+        font-size: 1.5em;
+        font-weight: 400;
+        transition: 200ms;
+    }
+
+    .a1:hover {
+        opacity: 0.5;
+    }
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    #toggle {
+        background-color: #2a2935;
+        height: 20px;
+        width: 20px;
+        box-sizing: border-box;
+        padding: 5px 5px 5px -5px;
+        border-radius: 3px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+    }
+
+    #toggle::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        transform: translateY(-5px);
+        transition: 0.2s;
+    }
+
+    #toggle::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        transform: translateY(5px);
+        transition: 0.2s;
+    }
+
+    #toggle.active::before {
+        transform: translateY(0px) rotate(45deg);
+    }
+
+    #toggle.active::after {
+        transform: translateY(0px) rotate(-45deg);
+    }
+
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: -310px;
+        z-index: 7;
+        width: 300px;
+        height: 110vh;
+        background: #192133;
+        -webkit-font-smoothing: antialiased;
+        transition: 0.6s ease-in-out;
+
+    }
+
+    #sidebar.active {
+        left: 0;
+        transition: 0.6s ease-in-out;
+    }
+
+    #sidebar ul {
+        position: relative;
+        margin-top: 90px;
+    }
+
+    #sidebar ul li {
+        list-style: none;
+        display: inline-block;
+        width: 100%;
+        padding: 10px 75px;
+        letter-spacing: 2px;
+    }
+
+    .arrow {
+        position: absolute;
+        right: 0px;
+        top: 8px;
+    }
+
+    .hr1,
+    .hr2 {
+        width: 100%;
+        border: none;
+        height: 0.8px;
+        background-color: #bcbcbc;
+        position: absolute;
+
+    }
+
+    .hr1 {
+        top: 70px;
+    }
+
+    .hr2 {
+        top: 130px;
+    }
+
+    .check {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .check div:first-child {
+        width: 100px;
+        margin-top: 10px;
+        background-image: url('https://www.hotstar.com/assets/233af5238f6cc83a9ba34b7ad6f39bf9.svg');
+        background-repeat: no-repeat;
+    }
+
+    .check div:last-child {
+        margin-top: -10px;
+    }
+
+    #switch[type=checkbox] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    label {
+        cursor: pointer;
+        width: 40px;
+        height: 23px;
+        background: rgb(18, 21, 32);
+        display: block;
+        border-radius: 30px;
+        position: relative;
+    }
+
+    label:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 23px;
+        height: 23px;
+        background: rgb(220, 220, 220);
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    #switch:checked+label {
+        background: #00c4ef;
+    }
+
+    #switch:checked+label:after {
+        left: calc(100% - 0px);
+        transform: translateX(-100%);
+    }
+
+    label:active:after {
+        width: 40px;
+    }
+
+    .category {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .category ol {
+        display: block;
+        width: 100%;
+        height: 190px;
+        position: relative;
+        top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .category ol li {
+        font-size: 1.1em;
+        margin-left: 55px;
+        letter-spacing: 0;
+        list-style: none;
+    }
+
+    .icons {
+        position: absolute;
+        left: 0;
+    }
+
+    #menu_nav {
+        display: block;
+    }
+}
+
+@media screen and (max-width:950px) and (min-width:500px) {
+    .mobile_nav {
+        display: block;
+
+    }
+
+    .nav {
+        display: block;
+    }
+
+    #toggle {
+
+        height: 30px;
+        width: 30px;
+        box-sizing: border-box;
+        padding: 5px 5px 5px -5px;
+        border-radius: 3px;
+        position: absolute;
+        top: 25px;
+        left: 50px;
+        z-index: 8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+    }
+
+    #toggle::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        transform: translateY(-5px);
+        transition: 0.2s;
+    }
+
+    #toggle::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        transform: translateY(5px);
+        transition: 0.2s;
+    }
+
+    #toggle.active::before {
+        transform: translateY(0px) rotate(45deg);
+    }
+
+    #toggle.active::after {
+        transform: translateY(0px) rotate(-45deg);
+    }
+
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: -70%;
+        z-index: 7;
+        width: 70%;
+        height: 110vh;
+        background: #192133;
+        -webkit-font-smoothing: antialiased;
+        transition: 0.6s ease-in-out;
+    }
+
+    #sidebar.active {
+        left: 0;
+        transition: 0.6s ease-in-out;
+    }
+
+    .arrow {
+        position: absolute;
+        right: 0px;
+        top: 8px;
+    }
+
+    .hr1,
+    .hr2 {
+        width: 100%;
+        border: none;
+        height: 0.8px;
+        background-color: #bcbcbc;
+        position: absolute;
+    }
+
+    .hr1 {
+        top: 90px;
+    }
+
+    .hr2 {
+        top: 200px;
+    }
+
+    .check {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .check div:first-child {
+        width: 100px;
+        margin-top: 10px;
+        background-image: url('https://www.hotstar.com/assets/233af5238f6cc83a9ba34b7ad6f39bf9.svg');
+        background-repeat: no-repeat;
+    }
+
+    .check div:last-child {
+        margin-top: -10px;
+        margin-right: 20px;
+    }
+
+    #switch[type=checkbox] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    label {
+        cursor: pointer;
+        width: 40px;
+        height: 23px;
+        background: rgb(18, 21, 32);
+        display: block;
+        border-radius: 30px;
+        position: relative;
+    }
+
+    label:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 23px;
+        height: 23px;
+        background: rgb(220, 220, 220);
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    #switch:checked+label {
+        background: #00c4ef;
+    }
+
+    #switch:checked+label:after {
+        left: calc(100% - 0px);
+        transform: translateX(-100%);
+    }
+
+    label:active:after {
+        width: 40px;
+    }
+
+    .category {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .category ol {
+        display: block;
+        width: 100%;
+        height: 190px;
+        position: relative;
+        top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .category ol li {
+        font-size: 1.1em;
+        margin-left: 55px;
+        letter-spacing: 0;
+        list-style: none;
+    }
+
+    .icons {
+        position: absolute;
+        left: 0;
+    }
+
+    #menu_nav {
+        display: block;
+    }
+}

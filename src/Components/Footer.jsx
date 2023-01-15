@@ -1,6 +1,6 @@
 import { Copyright, Facebook, Twitter } from "@mui/icons-material";
 import styled from "styled-components";
-import { mobile } from "../Responsive";
+import { mobile, tablet } from "../Responsive";
 import "./Footer.css";
 
 const Container = styled.div`
@@ -10,8 +10,12 @@ const Container = styled.div`
 
   ${mobile({
     flexDirection: "column",
-    padding: "1rem 0.5rem",
-    height: "68vh",
+    padding: "1rem 0rem",
+    height: "70vh",
+  })}
+  ${tablet({
+    padding: "1rem 1rem",
+    height: "26vh",
   })}
 
   section {
@@ -69,6 +73,10 @@ const List = styled.ul`
   ${mobile({
     flexWrap: "wrap",
     gap: "10px",
+  })}
+  ${tablet({
+    flexWrap: "wrap",
+    gap: "15px",
   })}
 `;
 const ListItem = styled.li`

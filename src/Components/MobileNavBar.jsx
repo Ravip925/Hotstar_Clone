@@ -1,96 +1,85 @@
-import { Monitor, TheaterComedy, Translate } from "@mui/icons-material";
-import React, { useState } from "react";
+import {
+  HomeOutlined,
+  LiveTvOutlined,
+  MovieCreationOutlined,
+  SportsBaseballOutlined,
+} from "@mui/icons-material";
 import styled from "styled-components";
-import "./MobileNavBar.css";
+import { mobile, tablet } from "../Responsive";
 
 const Container = styled.div`
-  height: 80vh;
   width: 100%;
-  margin-top: 30px;
-  padding: 0 1rem;
+  height: 50px;
+  background-color: #0c111b;
+  border-top: 1px solid #192133;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+  ${mobile({
+    display: "block",
+  })}
+  ${tablet({
+    display: "block",
+    height: "75px",
+  })}
 `;
 const Wrapper = styled.div`
   width: 100%;
-  height: 25vh;
-  position: relative;
+  height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+const Items = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.6em;
+  font-weight: 550;
+  gap: 4px;
+  ${tablet({
+    fontSize: "1rem",
+  })}
+`;
+const Image = styled.img`
+  width: 80%;
 `;
 
 const MobileNavBar = () => {
-  const [toggle, setToggle] = useState(false);
-
-  const handleToggle = () => {
-    setToggle(!toggle);
-  };
-
-  const toggleClass = toggle ? "active" : null;
-
-  document.onclick = function (e) {
-    if (e.target.id !== "sidebar" && e.target.id !== "toggle") {
-      setToggle(false);
-    }
-  };
   return (
     <>
-      <nav className="mobile_nav">
-        <div className="nav">
-          <div onClick={handleToggle} id="toggle" className={toggleClass}></div>
-          <div id="sidebar" className={toggleClass}>
-            <Container>
-              <Wrapper style={{ height: "10vh" }}>
-                <h3>Log in</h3>
-                <p>For a better experience</p>
-                <span className="arrow"></span>
-              </Wrapper>
-
-              <Wrapper style={{ height: "6vh" }}>
-                <h4>Watchlist</h4>
-              </Wrapper>
-
-              <Wrapper>
-                <div className="check">
-                  <div></div>
-                  <div>
-                    <input type="checkbox" id="switch" />
-                    <label htmlFor="switch">Toggle</label>
-                  </div>
-                </div>
-                <div className="category">
-                  <ul>
-                    <li>
-                      <p className="icons">
-                        <Monitor sx={{ fontSize: "1.2em" }} />
-                      </p>{" "}
-                      Channels
-                    </li>
-                    <li>
-                      <p className="icons">
-                        <Translate sx={{ fontSize: "1.2em" }} />
-                      </p>{" "}
-                      Languages
-                    </li>
-                    <li>
-                      <p className="icons">
-                        <TheaterComedy sx={{ fontSize: "1.2em" }} />
-                      </p>{" "}
-                      Genres
-                    </li>
-                  </ul>
-                </div>
-              </Wrapper>
-              <hr className="hr1" />
-              <hr className="hr2" />
-            </Container>
-          </div>
-        </div>
-      </nav>
+      <Container>
+        <Wrapper>
+          <Items>
+            <HomeOutlined />
+            <p>Home</p>
+          </Items>
+          <Items>
+            <LiveTvOutlined />
+            <p>TV</p>
+          </Items>
+          <Items>
+            <Image src="https://www.hotstar.com/assets/b50f06bb7daf1f895483b259df7c5912.svg" />
+          </Items>
+          <Items>
+            <MovieCreationOutlined />
+            <p>Movies</p>
+          </Items>
+          <Items>
+            <SportsBaseballOutlined />
+            <p>Sports</p>
+          </Items>
+        </Wrapper>
+      </Container>
     </>
   );
 };

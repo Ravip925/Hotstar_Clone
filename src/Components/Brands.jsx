@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { brands } from "../assets/data";
+import { mobile } from "../Responsive";
 
 const Container = styled.div`
   position: relative;
@@ -12,6 +13,9 @@ const Container = styled.div`
   padding: 0 3rem;
   justify-content: space-between;
   align-items: center;
+  ${mobile({
+    padding: "0 2rem",
+  })}
 `;
 const Wrapper = styled.div`
   position: relative;

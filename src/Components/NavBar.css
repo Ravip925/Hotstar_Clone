@@ -179,3 +179,37 @@
         right: 0px;
     }
 }
+
+@media screen and (max-width:950px) and (min-width:500px) {
+
+    #tv,
+    #movies,
+    #sports,
+    #kids,
+    #disney,
+    #login,
+    #menu_nav {
+        display: none;
+    }
+
+    .search-box {
+        width: 50px;
+        border-bottom: none;
+    }
+
+    ::placeholder {
+        visibility: hidden;
+    }
+
+    .search-box:focus {
+        width: 50px;
+        border-bottom: 0;
+    }
+
+    #search {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+    }
+
+}
