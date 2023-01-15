@@ -1,0 +1,181 @@
+.bars {
+    position: relative;
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    margin: 1.5px 0;
+    background-color: rgb(135, 135, 135);
+}
+
+.bars:hover .nav {
+    height: 120px;
+}
+
+.search-box {
+    border: none;
+    border-bottom: 1px solid #aaa;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: #fff;
+    width: 230px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+::placeholder {
+    color: rgb(233, 233, 233);
+}
+
+.search-box:focus {
+    width: 330px;
+    border-color: #1f80e0;
+}
+
+.sub-btn {
+    background: #1f80e0;
+    height: 25px;
+    padding: 0 15px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.login-link {
+    color: rgb(210, 210, 210);
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.menu ul {
+    width: 150px;
+    height: 121px;
+    overflow: hidden;
+    background-color: #141f37;
+    border-radius: 8px;
+    position: absolute;
+    top: 100px;
+    left: -20px;
+    z-index: 10;
+    transition: 0.1s all;
+    visibility: hidden;
+}
+
+.menu:hover .nav {
+    transform: translateY(-20px);
+    visibility: visible;
+}
+
+.menu ul li p {
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    margin-right: 10px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1778/1778557.png');
+}
+
+.tv ul,
+.movies ul,
+.sports ul {
+    width: 150px;
+    height: 320px;
+    background-color: #141f37;
+    border-radius: 8px;
+    position: absolute;
+    top: 80px;
+    left: -20px;
+    z-index: 10;
+    visibility: hidden;
+    transition: 0.1s all;
+}
+
+.tv ul li,
+.movies ul li,
+.sports ul li,
+.menu ul li {
+    font-size: 14px;
+    height: 40px;
+    padding: 10px 10px;
+    text-align: start;
+}
+
+.tv ul li:first-child,
+.movies ul li:first-child,
+.sports ul li:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.tv ul li:last-child,
+.movies ul li:last-child,
+.sports ul li:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.tv:hover ul,
+.movies:hover ul,
+.sports:hover ul {
+    visibility: visible;
+    transform: translateY(-10px);
+}
+
+.tv ul li:hover,
+.movies ul li:hover,
+.sports ul li:hover,
+.menu ul li:hover {
+    background-color: #0e1118;
+}
+
+@media screen and (max-width:425px) {
+
+    #tv,
+    #movies,
+    #sports,
+    #kids,
+    #disney,
+    #login,
+    #menu_nav {
+        display: none;
+    }
+
+    .search-box {
+        width: 50px;
+        border-bottom: none;
+    }
+
+    ::placeholder {
+        visibility: hidden;
+    }
+
+    .search-box:focus {
+        width: 50px;
+        border-bottom: 0;
+    }
+
+    #search {
+        position: absolute;
+        top: -10px;
+        right: 0px;
+    }
+}

@@ -1,0 +1,69 @@
+.flex {
+  width: 300px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+}
+
+.app-btn {
+  width: 45%;
+  max-width: 160px;
+  color: rgb(195, 195, 195);
+  margin: 20px 5px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.app-btn.blu {
+  background-color: #222330;
+  transition: background-color 0.25s linear;
+}
+
+.app-btn.blu:hover {
+  background-color: #00aef3;
+}
+
+#icon {
+  width: 20px;
+  text-align: center;
+  font-size: 25px;
+  margin-right: 7px;
+}
+
+.app-btn .big-txt {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width:425px) {
+  .flex {
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    margin-left: 0px;
+  }
+
+  #icon {
+    position: absolute;
+    left: 10px;
+  }
+
+  .app-btn {
+    width: 100%;
+    margin: 10px 0px;
+    text-align: left;
+    font-size: 8px;
+    position: relative;
+  }
+
+  .app-btn p {
+    margin-left: 12px;
+  }
+
+}
