@@ -1,5 +1,5 @@
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { css } from "styled-components";
 import { sliderItems } from "../assets/data";
@@ -26,7 +26,7 @@ const Arrow = styled.div`
 `;
 const Container = styled.div`
   width: 100%;
-  margin: 10px 0;
+  margin: 80px 0 10px 0;
   height: 70vh;
   display: flex;
   position: relative;
@@ -36,6 +36,7 @@ const Container = styled.div`
   }
   ${mobile({
     height: "35vh",
+    margin: "55px 0 10px 0",
   })}
   ${tablet({
     height: "35vh",
@@ -157,6 +158,17 @@ const InfoContainer = styled.div`
 
 const Slider = ({ screenWidth }) => {
   const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlideIndex(slideIndex + 1);
+      if (slideIndex === 2) {
+        clearInterval(interval);
+        setSlideIndex(0);
+      }
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [slideIndex]);
 
   const handleClick = (direction) => {
     if (direction === "left") {

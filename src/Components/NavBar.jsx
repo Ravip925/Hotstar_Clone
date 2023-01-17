@@ -6,12 +6,17 @@ import "./NavBar.css";
 
 const Container = styled.div`
   height: 80px;
+  width: 100%;
   text-decoration: none;
   user-select: none;
   background-color: #0c111b;
   color: rgb(210, 210, 210);
   background-position: bottom;
   font-family: "Roboto", "HelveticaNeue-Light", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
   ${mobile({
     width: "100%",
     height: "60px",
