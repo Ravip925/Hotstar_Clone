@@ -1,6 +1,7 @@
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { useState } from "react";
 import styled from "styled-components";
+import { css } from "styled-components";
 import { sliderItems } from "../assets/data";
 import { mobile, tablet } from "../Responsive";
 
@@ -55,11 +56,11 @@ const Slide = styled.div`
   padding: 20px 45px 20px 30px;
   ${mobile({
     height: "35vh",
-    padding: "20px 30px 20px 30px",
+    padding: "20px 20px 20px 20px",
   })}
   ${tablet({
     height: "35vh",
-    padding: "20px 30px 20px 30px",
+    padding: "1rem 2rem",
   })}
 
   .slider_container {
@@ -99,14 +100,23 @@ const Right = styled.div`
   height: 100%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-
-  background: linear-gradient(
-      90deg,
-      #000000 8%,
-      #131313d2 23%,
-      rgba(217, 217, 217, 0) 47%
-    ),
-    url(${(props) => props.url});
+  ${(props) => {
+    if (props.isScreenWidth < 950) {
+      return css`
+        background: url(${props.url});
+      `;
+    } else {
+      return css`
+        background: linear-gradient(
+            90deg,
+            #000000 8%,
+            #131313d2 23%,
+            rgba(217, 217, 217, 0) 47%
+          ),
+          url(${props.url});
+      `;
+    }
+  }};
   background-size: cover;
   background-repeat: no-repeat;
   ${mobile({
@@ -145,7 +155,7 @@ const InfoContainer = styled.div`
   }
 `;
 
-const Slider = () => {
+const Slider = ({ screenWidth }) => {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const handleClick = (direction) => {
@@ -176,9 +186,7 @@ const Slider = () => {
                   <p>{item.desc}</p>
                 </InfoContainer>
               </Left>
-              <Right url={item.img}>
-                <div></div>
-              </Right>
+              <Right url={item.img} isScreenWidth={screenWidth}></Right>
             </div>
           </Slide>
         ))}

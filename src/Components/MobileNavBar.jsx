@@ -35,6 +35,14 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  ${mobile({
+    justifyContent: "space-evenly",
+    padding: "0",
+  })}
+  ${tablet({
+    justifyContent: "space-evenly",
+    padding: "0",
+  })}
 `;
 const Items = styled.div`
   flex: 1;

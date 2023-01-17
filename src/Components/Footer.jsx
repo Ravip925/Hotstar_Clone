@@ -15,7 +15,7 @@ const Container = styled.div`
   })}
   ${tablet({
     padding: "1rem 1rem",
-    height: "26vh",
+    height: "32vh",
   })}
 
   section {
@@ -42,6 +42,9 @@ const Desc = styled.p`
   margin: 5px 0px;
   font-size: 0.7em;
   line-height: 20px;
+  ${tablet({
+    fontSize: "0.9em",
+  })}
 `;
 
 const Center = styled.div`
@@ -50,6 +53,12 @@ const Center = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  ${mobile({
+    flex: "1",
+  })}
+  ${tablet({
+    flex: "1.2",
+  })}
   ${mobile({
     flex: "1",
   })}
@@ -86,6 +95,9 @@ const ListItem = styled.li`
   &:active {
     color: #0031ae;
   }
+  ${tablet({
+    fontSize: "0.9em",
+  })}
 `;
 const SocialIcon = styled.div`
   width: 40px;

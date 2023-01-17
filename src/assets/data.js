@@ -1,7 +1,7 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/5418/1445418-h-3685fc747503",
+    img: "https://i.ibb.co/8sghv0p/slider-1.png",
     title: "TAZA KHABAR",
     category: "Hotstar Specials",
     genres: "Movie",
@@ -10,7 +10,7 @@ export const sliderItems = [
   },
   {
     id: 2,
-    img: "https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/1331/641331-h",
+    img: "https://i.ibb.co/9qS4B8w/slider-2.png",
     title: "CHHICHHORE",
     category: "Hindi",
     genres: "Drama",
@@ -19,7 +19,7 @@ export const sliderItems = [
   },
   {
     id: 3,
-    img: "https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/8455/1448455-h-33490f89a937",
+    img: "https://i.ibb.co/fkR1wBr/slider-3.png",
     title: "IND VS SL HIGHLIGHT",
     category: "Sports",
     genres: "Cricket",

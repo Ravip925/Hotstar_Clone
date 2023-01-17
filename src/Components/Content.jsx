@@ -75,7 +75,7 @@ const Latest = styled.div`
   gap: 20px;
   align-items: center;
   ${mobile({
-    padding: "0 2rem",
+    padding: "0 20px",
   })}
   ${tablet({
     padding: "0 2rem",
@@ -120,8 +120,7 @@ const Slide = styled.div`
   })}
 `;
 
-const Content = ({ data, title }) => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+const Content = ({ data, title, screenWidth }) => {
   const [slicedData, setSlicedData] = useState(data);
   const [slideIndex, setSlideIndex] = useState(0);
 
@@ -132,14 +131,6 @@ const Content = ({ data, title }) => {
       setSlideIndex(2);
     }
   };
-
-  useEffect(() => {
-    function handleResize() {
-      setScreenWidth(window.innerWidth);
-    }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   useEffect(() => {
     if (screenWidth < 425) {
